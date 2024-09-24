@@ -67,10 +67,10 @@
                             <div class="form-group">
                                 <label for="timeUnit">Satuan Waktu</label>
                                 <select id="timeUnit" name="timeUnit" class="form-control">
-                                    <option value="bulan">Bulan</option>
-                                    <option value="triwulan">Triwulan</option>
-                                    <option value="semester">Semester</option>
-                                    <option value="tahun">Tahun</option>
+                                    <option value="1">Tahun</option>
+                                    <option value="0.5">Semester</option>
+                                    <option value="0.25">Triwulan</option>
+                                    <option value="0.0833">Bulan</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-custom btn-block">Hitung</button>
@@ -100,20 +100,6 @@
             return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(angka);
         }
 
-        function konversiKeBulan(time, unit) {
-            switch (unit) {
-                case 'tahun':
-                    return time * 12;
-                case 'triwulan':
-                    return time * 3;
-                case 'semester':
-                    return time * 6;
-                case 'bulan':
-                default:
-                    return time;
-            }
-        }
-
         const form = document.getElementById('bungaTunggalForm');
         const resultsDiv = document.getElementById('resultDiv');
         const resultText = document.getElementById('resultText');
@@ -124,10 +110,9 @@
             const deposit = parseFloat(document.getElementById('deposit').value);
             const time = parseFloat(document.getElementById('time').value);
             const rate = parseFloat(document.getElementById('rate').value);
-            const timeUnit = document.getElementById('timeUnit').value;
+            const timeUnit = parseFloat(document.getElementById('timeUnit').value); // Ambil nilai konversi
 
-            const waktuDalamBulan = konversiKeBulan(time, timeUnit);
-            const hasil = hitungBungaTunggal(deposit, rate, waktuDalamBulan);
+            const hasil = hitungBungaTunggal(deposit, rate, time * timeUnit); // Kalikan waktu dengan nilai konversi
 
             resultText.innerHTML = `
                 <p>Pokok Awal: ${formatRupiah(deposit)}</p>
