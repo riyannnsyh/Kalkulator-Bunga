@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Bunga</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: #4e4c8a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h1, h2 {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+      background-color: #4e4c8a;
+      border: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #3b3a6d;
+    }
+
+    .container {
+      max-width: 1200px;
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <header class="text-white py-4">
+    <div class="container text-center">
+      <h1 class="display-4 font-weight-bold">Kalkulator Bunga</h1>
+      <p class="lead">Hitung bunga dengan mudah dan cepat</p>
+    </div>
+  </header>
+
+  <main class="container py-5 flex-grow-1">
+    <div class="text-center mb-5">
+      <h2 class="display-5 font-weight-bold">Pilih Jenis Perhitungan Bunga</h2>
+      <p class="text-muted">Pilih salah satu jenis perhitungan bunga di bawah ini</p>
+    </div>
+
+    <div class="row justify-content-center text-center">
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <h3 class="card-title font-weight-bold">Bunga Majemuk</h3>
+            <p class="card-text">Hitung bunga berdasarkan pokok ditambah bunga sebelumnya.</p>
+            <a href="majemuk.html" class="btn btn-primary btn-block">Pilih Bunga Majemuk</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <h3 class="class="card-title font-weight-bold">Bunga Tunggal</h3>
+            <p class="card-text">Hitung bunga berdasarkan pokok pinjaman awal.</p>
+            <a href="tunggal.html" class="btn btn-primary btn-block">Pilih Bunga Tunggal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4
+</body>
+</html>
